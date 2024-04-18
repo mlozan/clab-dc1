@@ -1,0 +1,19 @@
+# Ejecutar los comandos dentro de cada host 
+
+# host 1
+ip addr add 100.64.1.24/31 dev eth1
+ip link set eth1 up
+
+# host 2
+ip addr add 100.64.1.26/31 dev eth1
+ip link set eth1 up
+
+
+# host 3
+ip addr add 100.64.1.28/31 dev eth1
+ip link set eth1 up
+
+
+# host 4
+ip addr add 100.64.1.30/31 dev eth1
+ip link set eth1 up
