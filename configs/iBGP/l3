@@ -1,0 +1,17 @@
+set / network-instance default protocols bgp group EVPN
+set / network-instance default protocols bgp group EVPN admin-state enable
+set / network-instance default protocols bgp group EVPN description "BGP-EVPN"
+set / network-instance default protocols bgp group EVPN peer-as 4200065000
+set / network-instance default protocols bgp group EVPN afi-safi ipv4-unicast admin-state enable
+set / network-instance default protocols bgp group EVPN afi-safi evpn admin-state enable
+set / network-instance default protocols bgp group EVPN local-as as-number 4200065000
+set / network-instance default protocols bgp group EVPN transport local-address 1.1.1.3
+
+set / network-instance default protocols bgp neighbor 1.1.1.101
+set / network-instance default protocols bgp neighbor 1.1.1.101 admin-state enable
+set / network-instance default protocols bgp neighbor 1.1.1.101 description RR-Spine1
+set / network-instance default protocols bgp neighbor 1.1.1.101 peer-group EVPN
+set / network-instance default protocols bgp neighbor 1.1.1.102
+set / network-instance default protocols bgp neighbor 1.1.1.102 admin-state enable
+set / network-instance default protocols bgp neighbor 1.1.1.102 description RR-Spine2
+set / network-instance default protocols bgp neighbor 1.1.1.102 peer-group EVPN
