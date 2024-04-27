@@ -17,22 +17,23 @@ hosts=("h1" "h2" "h3" "h4")
 
 # Iterar sobre cada carpeta y archivo
 for carpeta in "${carpetas[@]}"; do
+    # Crear la carpeta dentro del contenedor si no existe
+    docker exec "$contenedor" mkdir -p "/tmp/$carpeta"
+
     for archivo in "${archivos[@]}"; do
         # Construir la ruta completa del archivo
         archivo_path="$base_folder/$carpeta/$archivo"
-        
-        # Verificar si la carpeta existe, si no, crearla
-        if [ ! -d "$base_folder/$carpeta" ]; then
-            mkdir -p "$base_folder/$carpeta"
+
+        # Copiar el archivo al contenedor si existe
+        if [ -f "$archivo_path" ]; then
+            docker cp "$archivo_path" "$contenedor:/tmp/$carpeta/$archivo"
+            docker exec "$contenedor" sr_cli source "/tmp/$carpeta/$archivo"
+        else
+            echo "El archivo $archivo no se encontró en la carpeta $carpeta"
         fi
-        
-        # Copiar el archivo al contenedor
-        docker cp "$archivo_path" "$contenedor:/tmp"
-        
-        # Ejecutar el comando en el contenedor
-        docker exec "$contenedor" sr_cli source "/tmp/$carpeta/$archivo"
     done
 done
+
 
 
 # Iterar sobre cada host
