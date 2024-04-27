@@ -1,3 +1,4 @@
+enter candidate
 set / network-instance default
 set / network-instance default type default
 set / network-instance default admin-state enable
@@ -34,3 +35,4 @@ set / interface ethernet-1/4 subinterface 1 ipv4
 set / interface ethernet-1/4 subinterface 1 ipv4 address 100.64.1.21/31
 set / network-instance default interface ethernet-1/4.1
 set / interface ethernet-1/4 subinterface 1 ipv4 admin-state enable
+commit now

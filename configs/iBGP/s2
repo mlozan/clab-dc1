@@ -1,3 +1,4 @@
+enter candidate
 set / network-instance default protocols bgp group EVPN
 set / network-instance default protocols bgp group EVPN admin-state enable
 set / network-instance default protocols bgp group EVPN description "BGP-EVPN"
@@ -40,3 +41,4 @@ set / network-instance default protocols bgp neighbor 1.1.1.202
 set / network-instance default protocols bgp neighbor 1.1.1.202 admin-state enable
 set / network-instance default protocols bgp neighbor 1.1.1.202 description BorderLeaf2
 set / network-instance default protocols bgp neighbor 1.1.1.202 peer-group EVPN
+commit now

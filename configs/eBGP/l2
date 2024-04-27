@@ -1,3 +1,4 @@
+enter candidate
 set / network-instance default protocols
 set / network-instance default protocols bgp
 set / network-instance default protocols bgp admin-state enable
@@ -40,3 +41,4 @@ set / network-instance default protocols bgp group spine import-policy policy-
 
 set / network-instance default protocols bgp afi-safi ipv4-unicast multipath max-paths-level-1 8
 set / network-instance default protocols bgp afi-safi ipv4-unicast multipath max-paths-level-2 8
+commit now
