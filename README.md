@@ -16,6 +16,11 @@ sudo containerlab deploy -t my_dc1.yaml
 bash setup.sh
 ```
 
+## Destroy
+```bash
+sudo containerlab destroy -t my_dc1.yaml
+```
+
 ## Conectarse a los nodos
 Default credentials: admin:NokiaSrl1!
 ### ssh
