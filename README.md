@@ -46,6 +46,10 @@ show interfaces
 ```bash
 show network-instance default protocols bgp neighbor
 ```
+### Rutas
+```bash
+show network-instance default protocols bgp routes ipv4 summary
+```
 ### Rutas recibidas
 ```bash
 show network-instance default protocols bgp neighbor <ip> received-routes <ipv4/ipv6/evpn>
@@ -54,6 +58,7 @@ show network-instance default protocols bgp neighbor <ip> received-routes <ipv4/
 ```bash
 show network-instance default protocols bgp neighbor <ip> advertised-routes <ipv4/ipv6/evpn>
 ```
+
 
 ## Gráfica de la topología
 ```bash
