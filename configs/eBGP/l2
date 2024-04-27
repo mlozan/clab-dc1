@@ -37,7 +37,7 @@ set / routing-policy policy policy-accept statement 2 match prefix-set p2p
 set / routing-policy policy policy-accept statement 2 action policy-result accept
 
 set / network-instance default protocols bgp group spine export-policy policy-accept
-set / network-instance default protocols bgp group spine import-policy policy-
+set / network-instance default protocols bgp group spine import-policy policy-accept
 
 set / network-instance default protocols bgp afi-safi ipv4-unicast multipath max-paths-level-1 8
 set / network-instance default protocols bgp afi-safi ipv4-unicast multipath max-paths-level-2 8

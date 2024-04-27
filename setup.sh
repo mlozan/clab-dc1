@@ -10,7 +10,10 @@ contenedor_patron="clab-my_dc1-"
 carpetas=("interfaces" "eBGP" "iBGP")
 
 # Nombres de los nodos (que también se utilizarán para el nombre del contenedor)
-nodos=("l1" "l2" "l3" "l4" "s1" "s2" "bl1" "bl2" "h1" "h2" "h3" "h4")
+nodos=("l1" "l2" "l3" "l4" "s1" "s2" "bl1" "bl2")
+
+# Lista de nombres de los hosts
+hosts=("h1" "h2" "h3" "h4")
 
 # Iterar sobre cada carpeta y nodo
 for carpeta in "${carpetas[@]}"; do
