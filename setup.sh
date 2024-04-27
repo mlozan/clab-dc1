@@ -4,7 +4,7 @@
 base_folder="configs"
 
 # Nombres de las carpetas dentro de la carpeta base
-carpetas=("eBGP" "iBGP" "interfaces")
+carpetas=("interfaces" "eBGP" "iBGP" )
 
 # Nombres de los archivos dentro de cada carpeta
 archivos=("l1" "l2" "l3" "l4" "s1" "s2" "bl1" "bl2")
