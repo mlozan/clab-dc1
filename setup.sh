@@ -15,6 +15,26 @@ contenedor="clab-my_dc1-l1"
 # Lista de nombres de los hosts
 hosts=("h1" "h2" "h3" "h4")
 
+# Iterar sobre cada carpeta y archivo
+for carpeta in "${carpetas[@]}"; do
+    for archivo in "${archivos[@]}"; do
+        # Construir la ruta completa del archivo
+        archivo_path="$base_folder/$carpeta/$archivo"
+        
+        # Verificar si la carpeta existe, si no, crearla
+        if [ ! -d "$base_folder/$carpeta" ]; then
+            mkdir -p "$base_folder/$carpeta"
+        fi
+        
+        # Copiar el archivo al contenedor
+        docker cp "$archivo_path" "$contenedor:/tmp"
+        
+        # Ejecutar el comando en el contenedor
+        docker exec "$contenedor" sr_cli source "/tmp/$carpeta/$archivo"
+    done
+done
+
+
 # Iterar sobre cada host
 for host in "${hosts[@]}"; do
     # Obtener la dirección IP correspondiente
@@ -28,18 +48,4 @@ for host in "${hosts[@]}"; do
     # Ejecutar los comandos en el host
     docker exec "clab-my_dc1-$host" ip addr add "$ip" dev eth1
     docker exec "clab-my_dc1-$host" ip link set eth1 up
-done
-
-# Iterar sobre cada carpeta y archivo
-for carpeta in "${carpetas[@]}"; do
-    for archivo in "${archivos[@]}"; do
-        # Construir la ruta completa del archivo
-        archivo_path="$base_folder/$carpeta/$archivo"
-        
-        # Copiar el archivo al contenedor
-        docker cp "$archivo_path" "$contenedor:/tmp"
-        
-        # Ejecutar el comando en el contenedor
-        docker exec "$contenedor" sr_cli source "/tmp/$archivo"
-    done
 done
