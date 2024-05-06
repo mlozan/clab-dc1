@@ -1,0 +1,50 @@
+enter candidate
+network-instance ip-vrf1 {
+        type ip-vrf
+        admin-state enable
+        interface ethernet-1/10.1 {
+        }
+        vxlan-interface vxlan1.1 {
+        }
+        protocols {
+            bgp-evpn {
+                bgp-instance 1 {
+                    admin-state enable
+                    vxlan-interface vxlan1.1
+                    evi 10
+                    ecmp 2
+                }
+            }
+            bgp-vpn {
+                bgp-instance 1 {
+                    route-target {
+                        export-rt target:1:10
+                        import-rt target:1:10
+                    }
+                }
+            }
+        }
+    }
+
+interface ethernet-1/10 {
+        admin-state enable
+        subinterface 1 {
+            type routed
+            admin-state enable
+            ipv4 {
+                address 192.168.3.2/30 {
+                }
+            }
+        }
+    }
+
+tunnel-interface vxlan1 {
+        vxlan-interface 1 {
+            type routed
+            ingress {
+                vni 10
+            }
+        }
+    }
+
+commit now
