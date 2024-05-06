@@ -41,7 +41,6 @@ interface ethernet-1/10 {
 tunnel-interface vxlan1 {
         vxlan-interface 1 {
             type routed
-            admin-state enable
             ingress {
                 vni 10
             }
