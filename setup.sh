@@ -38,20 +38,4 @@ for carpeta in "${carpetas[@]}"; do
     done
 done
 
-# Iterar sobre cada host
-for host in "${hosts[@]}"; do
-    # Obtener la dirección IP correspondiente
-    case $host in
-        "h1") ip="192.168.1.11/24" ;;
-        "h2") ip="172.16.1.12/24" ;;
-        "h3") ip="192.168.3.2/30" ;;
-        "h4") ip="172.16.1.14/24" ;;
-    esac
 
-    # Obtener el nombre del contenedor correspondiente al host
-    contenedor="clab-my_dc1-$host"
-    
-    # Ejecutar los comandos en el host
-    docker exec "$contenedor" ip addr add "$ip" dev eth1
-    docker exec "$contenedor" ip link set eth1 up
-done
