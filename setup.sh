@@ -7,7 +7,7 @@ base_folder="configs"
 contenedor_patron="clab-my_dc1-"
 
 # Nombres de las carpetas dentro de la carpeta base
-carpetas=("interfaces" "eBGP" "iBGP")
+carpetas=("interfaces" "eBGP" "iBGP" "EVPN")
 
 # Nombres de los nodos (que también se utilizarán para el nombre del contenedor)
 nodos=("l1" "l2" "l3" "l4" "s1" "s2" "bl1" "bl2")
