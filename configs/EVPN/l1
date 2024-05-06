@@ -47,5 +47,6 @@ tunnel-interface vxlan1 {
         }
     }
 
+set / interface ethernet-1/10 subinterface 1 ipv4 admin-state enable
 
 commit now
