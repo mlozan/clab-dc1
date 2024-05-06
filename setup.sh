@@ -42,10 +42,10 @@ done
 for host in "${hosts[@]}"; do
     # Obtener la dirección IP correspondiente
     case $host in
-        "h1") ip="100.64.1.24/31" ;;
-        "h2") ip="100.64.1.26/31" ;;
-        "h3") ip="100.64.1.28/31" ;;
-        "h4") ip="100.64.1.30/31" ;;
+        "h1") ip="192.168.1.11/24" ;;
+        "h2") ip="172.16.1.12/24" ;;
+        "h3") ip="192.168.3.2/30" ;;
+        "h4") ip="172.16.1.14/24" ;;
     esac
 
     # Obtener el nombre del contenedor correspondiente al host

@@ -32,7 +32,7 @@ interface ethernet-1/10 {
             type routed
             admin-state enable
             ipv4 {
-                address 192.168.3.2/30 {
+                address 192.168.3.1/30 {
                 }
             }
         }
