@@ -38,23 +38,23 @@ topology:
     h1:
       kind: linux
       binds:
-        - "/home/maria/Lab-examples/clab-dc1/configs/h1.sh:h1.sh"
-      cmd: "h1.sh"
+        - "/home/maria/Lab-examples/clab-dc1/configs/h1.sh:/configs/h1.sh"
+      cmd: "/configs/h1.sh"
     h2:
       kind: linux
       binds:
-        - "/home/maria/Lab-examples/clab-dc1/configs/h2.sh:h2.sh"
-      cmd: "h2.sh"
+        - "/home/maria/Lab-examples/clab-dc1/configs/h2.sh:/configs/h2.sh"
+      cmd: "/configs/h2.sh"
     h3:
       kind: linux
       binds:
-        - "/home/maria/Lab-examples/clab-dc1/configs/h3.sh:h3.sh"
-      cmd: "h3.sh"
+        - "/home/maria/Lab-examples/clab-dc1/configs/h3.sh:/configs/h3.sh"
+      cmd: "/configs/h3.sh"
     h4:
       kind: linux
       binds:
-        - "/home/maria/Lab-examples/clab-dc1/configs/h4.sh:h4.sh"
-      cmd: "h4.sh"
+        - "/home/maria/Lab-examples/clab-dc1/configs/h4.sh:/configs/h4.sh"
+      cmd: "/configs/h4.sh"
 
   links:
     - endpoints: ["s1:e1-33", "bl1:e1-3"]
