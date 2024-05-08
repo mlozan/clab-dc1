@@ -37,24 +37,12 @@ topology:
       startup-config: configs/l4.cfg
     h1:
       kind: linux
-      binds:
-        - "/home/maria/Lab-examples/clab-dc1/configs/h1.sh:/configs/h1.sh"
-      cmd: "sudo bash /configs/h1.sh"
     h2:
       kind: linux
-      binds:
-        - "/home/maria/Lab-examples/clab-dc1/configs/h2.sh:/configs/h2.sh"
-      cmd: "sudo bash /configs/h2.sh"
     h3:
       kind: linux
-      binds:
-        - "/home/maria/Lab-examples/clab-dc1/configs/h3.sh:/configs/h3.sh"
-      cmd: "sudo bash /configs/h3.sh"
     h4:
       kind: linux
-      binds:
-        - "/home/maria/Lab-examples/clab-dc1/configs/h4.sh:/configs/h4.sh"
-      cmd: "sudo bash /configs/h4.sh"
 
   links:
     - endpoints: ["s1:e1-33", "bl1:e1-3"]
