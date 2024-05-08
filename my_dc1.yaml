@@ -37,12 +37,16 @@ topology:
       startup-config: configs/l4.cfg
     h1:
       kind: linux
+      cmd: configs/h1.sh
     h2:
       kind: linux
+      cmd: configs/h2.sh
     h3:
       kind: linux
+      cmd: configs/h3.sh
     h4:
       kind: linux
+      cmd: configs/h4.sh
 
   links:
     - endpoints: ["s1:e1-33", "bl1:e1-3"]
