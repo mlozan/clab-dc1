@@ -13,28 +13,28 @@ topology:
   nodes:
     bl1:
       mgmt-ipv4: 172.20.0.101
-      startup-config: configs/bl1.cfg
+      startup-config: configs/ip/bl1.cfg
     bl2:
       mgmt-ipv4: 172.20.0.102
-      startup-config: configs/bl2.cfg
+      startup-config: configs/ip/bl2.cfg
     s1:
       mgmt-ipv4: 172.20.0.3
-      startup-config: configs/s1.cfg
+      startup-config: configs/ip/s1.cfg
     s2:
       mgmt-ipv4: 172.20.0.4
-      startup-config: configs/s2.cfg
+      startup-config: configs/ip/s2.cfg
     l1:
       mgmt-ipv4: 172.20.0.11
-      startup-config: configs/l1.cfg
+      startup-config: configs/ip/l1.cfg
     l2:
       mgmt-ipv4: 172.20.0.12
-      startup-config: configs/l2.cfg
+      startup-config: configs/ip/l2.cfg
     l3:
       mgmt-ipv4: 172.20.0.13
-      startup-config: configs/l3.cfg
+      startup-config: configs/ip/l3.cfg
     l4:
       mgmt-ipv4: 172.20.0.14
-      startup-config: configs/l4.cfg
+      startup-config: configs/ip/l4.cfg
     h1:
       kind: linux
     h2:
