@@ -21,13 +21,13 @@ declare -A comandos_ip=(
 
 # Lista de comandos a ejecutar para cada host en my_dc1_mac.yaml
 declare -A comandos_mac=(
-    ["h1"]="echo 'Configuración específica para my_dc1_mac.yaml en h1';"
+    ["h1"]="sudo ip addr add 172.16.1.12/24 dev eth1"
 
-    ["h2"]="echo 'Configuración específica para my_dc1_mac.yaml en h2';"
+    ["h2"]="sudo ip addr add 172.16.1.14/24 dev eth1"
 
-    ["h3"]="echo 'Configuración específica para my_dc1_mac.yaml en h3';"
+    ["h3"]="sudo ip addr add 172.16.1.16/24 dev eth1"
 
-    ["h4"]="echo 'Configuración específica para my_dc1_mac.yaml en h4';"
+    ["h4"]="sudo ip addr add 172.16.1.18/24 dev eth1"
 )
 
 # Validar el argumento pasado al script
