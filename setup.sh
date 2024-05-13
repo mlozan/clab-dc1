@@ -44,11 +44,11 @@ else
 fi
 
 # Nombre del patrón de contenedor destino
-contenedor_patron="clab-my_dc1-"
+contenedor_patron="clab-my_dc1-h"
 
 # Iterar sobre cada host y ejecutar los comandos correspondientes
 for host in "${!comandos[@]}"; do
-    contenedor="clab-my_dc1-$host"
+    contenedor="clab-my_dc1-h$host"
     
     # Ejecutar los comandos para el host actual
     comando="${comandos[$host]}"
