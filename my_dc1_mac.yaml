@@ -13,10 +13,10 @@ topology:
   nodes:
     bl1:
       mgmt-ipv4: 172.20.0.101
-      startup-config: configs/bl1.cfg
+      startup-config: configs/mac/bl1.cfg
     bl2:
       mgmt-ipv4: 172.20.0.102
-      startup-config: configs/bl2.cfg
+      startup-config: configs/mac/bl2.cfg
     s1:
       mgmt-ipv4: 172.20.0.3
       startup-config: configs/mac/s1.cfg
