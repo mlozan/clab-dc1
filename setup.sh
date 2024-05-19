@@ -43,6 +43,7 @@ else
     comandos=("${comandos_mac[@]}")
 fi
 
+
 # Nombre del patrón de contenedor destino
 contenedor_patron="clab-my_dc1-h"
 
