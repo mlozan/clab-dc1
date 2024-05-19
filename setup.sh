@@ -40,13 +40,13 @@ fi
 if [ "$1" == "ip" ]; then
     comandos=("${comandos_ip[@]}")
     # Nombre del patrón de contenedor destino
-    contenedor_patron="clab-my_dc1-h"
+    contenedor_patron="clab-my_dc1-"
     # Lista de nombres de los hosts
     hosts=("h1" "h2" "h3" "h4")
 elif [ "$1" == "mac" ]; then
     comandos=("${comandos_mac[@]}")
     # Nombre del patrón de contenedor destino
-    contenedor_patron="clab-my_dc1-h"
+    contenedor_patron="clab-my_dc1-"
     # Lista de nombres de los hosts
     hosts=("h1" "h2" "h3" "h4")
 fi
