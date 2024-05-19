@@ -52,7 +52,7 @@ hosts=("h1" "h2" "h3" "h4")
 
 # Iterar sobre cada host y ejecutar los comandos correspondientes
 for host in "${!comandos[@]}"; do
-    contenedor="clab-my_dc1-$host"
+    contenedor="clab-my_dc1-h$host"
 
     # Ejecutar los comandos para el host actual
     for comando in "${comandos[$host]}"; do
