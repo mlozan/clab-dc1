@@ -24,9 +24,9 @@ fi
 
 # Determinar qué conjunto de comandos usar según el argumento
 if [ "$1" == "ip" ]; then
-    comandos_array="comandos_ip"
+    declare -n comandos_ref=comandos_ip
 elif [ "$1" == "mac" ]; then
-    comandos_array="comandos_mac"
+    declare -n comandos_ref=comandos_mac
 fi
 
 # Nombre del patrón de contenedor destino
@@ -37,7 +37,7 @@ hosts=("h1" "h2" "h3" "h4")
 # Iterar sobre cada host y ejecutar los comandos correspondientes
 for host in "${hosts[@]}"; do
     contenedor="$contenedor_patron$host"
-    comandos="${!comandos_array}[$host]"
+    comandos="${comandos_ref[$host]}"
     # Ejecutar los comandos para el host actual
-    docker exec -ti "$contenedor" bash -c "${!comandos}"
+    docker exec -ti "$contenedor" bash -c "$comandos"
 done
