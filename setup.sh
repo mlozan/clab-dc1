@@ -38,25 +38,20 @@ fi
 
 # Determinar qué conjunto de comandos usar según el argumento
 if [ "$1" == "ip" ]; then
-    comandos=("${comandos_ip[@]}")
-    # Nombre del patrón de contenedor destino
-    contenedor_patron="clab-my_dc1-"
-    # Lista de nombres de los hosts
-    hosts=("h1" "h2" "h3" "h4")
+    comandos=comandos_ip
 elif [ "$1" == "mac" ]; then
-    comandos=("${comandos_mac[@]}")
-    # Nombre del patrón de contenedor destino
-    contenedor_patron="clab-my_dc1-"
-    # Lista de nombres de los hosts
-    hosts=("h1" "h2" "h3" "h4")
+    comandos=comandos_mac
 fi
+
+# Nombre del patrón de contenedor destino
+contenedor_patron="clab-my_dc1-"
+# Lista de nombres de los hosts
+hosts=("h1" "h2" "h3" "h4")
 
 # Iterar sobre cada host y ejecutar los comandos correspondientes
 for host in "${hosts[@]}"; do
     contenedor="$contenedor_patron$host"
-
     # Ejecutar los comandos para el host actual
-    for comando in "${comandos[$host]}"; do
-        docker exec -ti "$contenedor" bash -c "$comando"
-    done
+    # Se usa eval para ejecutar múltiples comandos en una sola línea
+    docker exec -ti "$contenedor" bash -c "${!comandos[$host]}"
 done
