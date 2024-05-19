@@ -39,10 +39,9 @@ fi
 # Determinar qué conjunto de comandos usar según el argumento
 if [ "$1" == "ip" ]; then
     comandos=("${comandos_ip[@]}")
-else
+elif [ "$1" == "mac" ]; then
     comandos=("${comandos_mac[@]}")
 fi
-
 
 # Nombre del patrón de contenedor destino
 contenedor_patron="clab-my_dc1-h"
@@ -59,5 +58,3 @@ for host in "${hosts[@]}"; do
         docker exec -ti "$contenedor" bash -c "$comando"
     done
 done
-
-
