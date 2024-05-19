@@ -50,11 +50,12 @@ contenedor_patron="clab-my_dc1-h"
 hosts=("h1" "h2" "h3" "h4")
 
 # Iterar sobre cada host y ejecutar los comandos correspondientes
-for host in "${hosts[@]}"; do
-    contenedor="clab-my_dc1-$host"
+for host_index in "${!comandos[@]}"; do
+    contenedor="clab-my_dc1-${hosts[$host_index]}"
 
     # Ejecutar los comandos para el host actual
-    for comando in "${comandos[$host]}"; do
+    for comando in "${comandos[$host_index]}"; do
         docker exec -ti "$contenedor" bash -c "$comando"
     done
 done
+
