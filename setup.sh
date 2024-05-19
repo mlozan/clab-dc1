@@ -49,10 +49,7 @@ contenedor_patron="clab-my_dc1-h"
 
 # Iterar sobre cada host y ejecutar los comandos correspondientes
 for host in "${!comandos[@]}"; do
-    # Ajustar el índice del host para comenzar desde 1 en lugar de 0
-    host_adjusted=$((host+1))
-    contenedor="clab-my_dc1-h$host_adjusted"
-    
+     contenedor="clab-my_dc1-h$host"
     # Ejecutar los comandos para el host actual
     comando="${comandos[$host]}"
     docker exec -ti "$contenedor" bash -c "$comando"
