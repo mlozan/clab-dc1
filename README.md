@@ -8,17 +8,26 @@ Basado en: [Configuring SRLinux Nodes in a 3-Tier Data](https://networkcloudande
 
 ## Deploy
 ```bash
-sudo containerlab deploy -t my_dc1.yaml
+sudo containerlab deploy -t my_dc1_ip.clab.yaml
+```
+```bash
+sudo containerlab deploy -t my_dc1_mac.clab.yaml
 ```
 
 ## Cargar configuración
 ```bash
-bash setup.sh
+bash setup.sh ip
+```
+```bash
+bash setup.sh mac
 ```
 
 ## Destroy
 ```bash
-sudo containerlab destroy -t my_dc1.yaml
+sudo containerlab destroy -t my_dc1_ip.clab.yaml
+```
+```bash
+sudo containerlab destroy -t my_dc1_mac.clab.yaml
 ```
 
 ## Conectarse a los nodos
