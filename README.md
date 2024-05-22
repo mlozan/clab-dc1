@@ -8,10 +8,10 @@ Basado en: [Configuring SRLinux Nodes in a 3-Tier Data](https://networkcloudande
 
 ## Deploy
 ```bash
-sudo containerlab deploy -t my_dc1_ip.clab.yaml
+sudo containerlab deploy -t my_dc1_ip.clab.yml
 ```
 ```bash
-sudo containerlab deploy -t my_dc1_mac.clab.yaml
+sudo containerlab deploy -t my_dc1_mac.clab.yml
 ```
 
 ## Cargar configuración
@@ -56,22 +56,36 @@ info flat
 ```bash
 show interfaces
 ```
-### Vecinos BGP
+
+### OSPF
+#### Vecinos OSPF
+```bash
+show network-instance default protocols ospf neighbor
+```
+
+#### Area database
+```bash
+show network-instance default protocols ospf database
+```
+
+### BGP
+#### Vecinos BGP
 ```bash
 show network-instance default protocols bgp neighbor
 ```
-### Rutas
+#### Rutas
 ```bash
 show network-instance default protocols bgp routes ipv4 summary
 ```
-### Rutas recibidas
+#### Rutas recibidas
 ```bash
 show network-instance default protocols bgp neighbor <ip> received-routes <ipv4/ipv6/evpn>
 ```
-### Rutas anunciadas
+#### Rutas anunciadas
 ```bash
 show network-instance default protocols bgp neighbor <ip> advertised-routes <ipv4/ipv6/evpn>
 ```
+
 
 
 ## Gráfica de la topología
