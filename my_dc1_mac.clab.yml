@@ -49,6 +49,7 @@ topology:
     - endpoints: ["s1:e1-34", "bl2:e1-3"]
     - endpoints: ["s2:e1-33", "bl1:e1-4"]
     - endpoints: ["s2:e1-34", "bl2:e1-4"]
+
     - endpoints: ["s1:e1-1", "l1:e1-3"]
     - endpoints: ["s1:e1-2", "l2:e1-3"]
     - endpoints: ["s1:e1-3", "l3:e1-3"]
@@ -57,6 +58,7 @@ topology:
     - endpoints: ["s2:e1-2", "l2:e1-4"]
     - endpoints: ["s2:e1-3", "l3:e1-4"]
     - endpoints: ["s2:e1-4", "l4:e1-4"]
+    
     - endpoints: ["l1:e1-10", "h1:eth1"]
     - endpoints: ["l2:e1-10", "h2:eth1"]
     - endpoints: ["l3:e1-10", "h3:eth1"]
