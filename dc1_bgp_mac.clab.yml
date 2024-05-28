@@ -1,0 +1,70 @@
+name: dc1_bgp_mac
+
+topology:
+  defaults:
+    kind: srl
+  kinds:
+    srl:
+      type: ixrd3
+      image: ghcr.io/nokia/srlinux:latest
+    linux:
+      image: docker.io/akpinar/alpine
+
+  nodes:
+    bl1:
+      mgmt-ipv4: 172.20.0.101
+      startup-config: configs/bgp/mac/bl1.cfg
+    bl2:
+      mgmt-ipv4: 172.20.0.102
+      startup-config: configs/bgp/mac/bl2.cfg
+    s1:
+      mgmt-ipv4: 172.20.0.3
+      startup-config: configs/bgp/mac/s1.cfg
+    s2:
+      mgmt-ipv4: 172.20.0.4
+      startup-config: configs/bgp/mac/s2.cfg
+    l1:
+      mgmt-ipv4: 172.20.0.11
+      startup-config: configs/bgp/mac/l1.cfg
+    l2:
+      mgmt-ipv4: 172.20.0.12
+      startup-config: configs/bgp/mac/l2.cfg
+    l3:
+      mgmt-ipv4: 172.20.0.13
+      startup-config: configs/bgp/mac/l3.cfg
+    l4:
+      mgmt-ipv4: 172.20.0.14
+      startup-config: configs/bgp/mac/l4.cfg
+    h1:
+      kind: linux
+    h2:
+      kind: linux
+    h3:
+      kind: linux
+    h4:
+      kind: linux
+
+  links:
+    - endpoints: ["s1:e1-33", "bl1:e1-3"]
+    - endpoints: ["s1:e1-34", "bl2:e1-3"]
+    - endpoints: ["s2:e1-33", "bl1:e1-4"]
+    - endpoints: ["s2:e1-34", "bl2:e1-4"]
+
+    - endpoints: ["s1:e1-1", "l1:e1-3"]
+    - endpoints: ["s1:e1-2", "l2:e1-3"]
+    - endpoints: ["s1:e1-3", "l3:e1-3"]
+    - endpoints: ["s1:e1-4", "l4:e1-3"]
+    - endpoints: ["s2:e1-1", "l1:e1-4"]
+    - endpoints: ["s2:e1-2", "l2:e1-4"]
+    - endpoints: ["s2:e1-3", "l3:e1-4"]
+    - endpoints: ["s2:e1-4", "l4:e1-4"]
+    
+    - endpoints: ["l1:e1-10", "h1:eth1"]
+    - endpoints: ["l2:e1-10", "h2:eth1"]
+    - endpoints: ["l3:e1-10", "h3:eth1"]
+    - endpoints: ["l4:e1-10", "h4:eth1"]
+
+mgmt:
+  network: srl-mgmt
+  ipv4-subnet: 172.20.0.0/24
+  ipv6-subnet: 2001:172:20::/80
