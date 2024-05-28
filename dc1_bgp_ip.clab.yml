@@ -1,4 +1,4 @@
-name: dc1_bgp_ip
+name: my_dc1
 
 topology:
   defaults:

@@ -1,4 +1,4 @@
-name: dc1_bgp_mac
+name: my_dc1
 
 topology:
   defaults:
