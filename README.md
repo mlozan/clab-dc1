@@ -7,13 +7,9 @@ Basado en: [Configuring SRLinux Nodes in a 3-Tier Data](https://networkcloudande
 
 
 ## Deploy
-### Layer 3 with OSPF
+### OSPF
 ```bash
-sudo containerlab deploy -t dc1_ospf_ip.clab.yml
-```
-### Layer 2 with OSPF
-```bash
-sudo containerlab deploy -t dc1_ospf_mac.clab.yml
+sudo containerlab deploy -t dc1_ospf.clab.yml
 ```
 ### Layer 3 with BGP
 ```bash
@@ -33,13 +29,9 @@ bash setup.sh mac
 ```
 
 ## Destroy
-### Layer 3 with OSPF
+### OSPF
 ```bash
-sudo containerlab destry -t dc1_ospf_ip.clab.yml
-```
-### Layer 2 with OSPF
-```bash
-sudo containerlab destroy -t dc1_ospf_mac.clab.yml
+sudo containerlab destry -t dc1_ospf.clab.yml
 ```
 ### Layer 3 with BGP
 ```bash
