@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Lista de comandos a ejecutar para cada host en my_dc1_ip.yaml
+# Lista de comandos a ejecutar para cada host en el caso de configuración de nivel 3
 declare -A comandos_ip=(
     ["h1"]="sudo ip addr add 192.168.1.11/24 dev eth1; 
             sudo ip route add 192.168.0.0/16 via 192.168.1.1 dev eth1; 
@@ -20,7 +20,7 @@ declare -A comandos_ip=(
             sudo ifconfig eth1 mtu 8900;"
 )
 
-# Lista de comandos a ejecutar para cada host en my_dc1_mac.yaml
+# Lista de comandos a ejecutar para cada host en el caso de configuración de nivel 2
 declare -A comandos_mac=(
     ["h1"]="sudo ip addr add 172.16.1.12/24 dev eth1;
             sudo ifconfig eth1 mtu 8900;"
