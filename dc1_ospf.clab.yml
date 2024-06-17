@@ -66,5 +66,6 @@ topology:
 
 mgmt:
   network: srl-mgmt
+  mtu: 8900
   ipv4-subnet: 172.20.0.0/24
   ipv6-subnet: 2001:172:20::/80
