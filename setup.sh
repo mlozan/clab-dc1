@@ -22,10 +22,14 @@ declare -A comandos_ip=(
 
 # Lista de comandos a ejecutar para cada host en el caso de configuración de nivel 2
 declare -A comandos_mac=(
-    ["h1"]="sudo ip addr add 172.16.1.12/24 dev eth1;"
-    ["h2"]="sudo ip addr add 172.16.1.14/24 dev eth1;"
-    ["h3"]="sudo ip addr add 172.16.1.16/24 dev eth1;"
-    ["h4"]="sudo ip addr add 172.16.1.18/24 dev eth1;"
+    ["h1"]="sudo ip addr add 172.16.1.12/24 dev eth1;
+            sudo ifconfig eth1 mtu 8000;"
+    ["h2"]="sudo ip addr add 172.16.1.14/24 dev eth1;
+            sudo ifconfig eth1 mtu 8000;"
+    ["h3"]="sudo ip addr add 172.16.1.16/24 dev eth1;
+            sudo ifconfig eth1 mtu 8000;"
+    ["h4"]="sudo ip addr add 172.16.1.18/24 dev eth1;
+            sudo ifconfig eth1 mtu 8000;"
 )
 
 # Validar el argumento pasado al script
